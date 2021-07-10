@@ -10,7 +10,9 @@ Implement VGG16 based fcn net for semantic segmentation
 """
 import collections
 
-import tensorflow as tf
+# import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 
 from semantic_segmentation_zoo import cnn_basenet
 from local_utils.config_utils import parse_config_utils
