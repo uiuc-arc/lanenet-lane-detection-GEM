@@ -1,7 +1,7 @@
 # LaneNet-Lane-Detection
 Use tensorflow to implement a Deep Neural Network for real time lane detection mainly based on the IEEE IV conference 
 paper "Towards End-to-End Lane Detection: an Instance Segmentation Approach".You can refer to their paper for details 
-https://arxiv.org/abs/1802.05591. This model consists of a encoder-decoder stage, binary semantic segmentation stage 
+https://arxiv.org/abs/1802.05591. This model consists of an encoder-decoder stage, binary semantic segmentation stage 
 and instance semantic segmentation using discriminative loss function for real time lane detection task.
 
 The main network architecture is as follows:
@@ -9,14 +9,40 @@ The main network architecture is as follows:
 `Network Architecture`
 ![NetWork_Architecture](./data/source_image/network_architecture.png)
 
-## Installation
-This software has only been tested on ubuntu 16.04(x64), python3.5, cuda-9.0, cudnn-7.0 with a GTX-1070 GPU. 
-To install this software you need tensorflow 1.12.0 and other version of tensorflow has not been tested but I think 
-it will be able to work properly in tensorflow above version 1.12. Other required package you may install them by
+This repository is a fork for our research in [Center for Autonomy](https://autonomy.illinois.edu/) at University of
+Illinois at Urbana-Champaign. The main goals of this fork are:
 
+1. Upgrade to TensorFlow 2 with Python 3.8
+2. Clearly separate the source code into 
+   1. Data structures for LaneNet models with methods to configure parameters as well as save/restore weights
+   2. Scripts and data for training.
+   3. Utility functions and scripts for testing, validation, and deployment.
+   4. Unit tests for Python classes
+3. Provide a compact Python package installable using `pip` with only LaneNet models and utility functions
+   for deployment.
+
+## Installation
+We have only tested on Ubuntu 20.04(x64), Python 3.8, CUDA 11.4, cuDNN 8.2. 
+To install, you need TensorFlow above 2.2. We have only tested with TensorFlow 2.6.
+
+### For testing and deployment with trained weight files
+
+You may install `lanenet` as a Python package by
+```bash
+pip3 install git+https://github.com/GEM-Illinois/lanenet-lane-detection.git#egg=lanenet
 ```
-pip3 install -r requirements.txt
+The command will download directly from GitHub and install the package.
+You can add the `--user` option if you are installing without virtual environments or root permissions. 
+
+### For training LaneNet or Contribute to our repository
+You may install `lanenet` as an **editable** Python package by
 ```
+git clone https://github.com/GEM-Illinois/lanenet-lane-detection.git
+cd lanenet-lane-detection
+pip3 install -r requirements.txt  # Install additional Python dependencies
+pip3 install -e ./
+```
+
 
 ## Test model
 In this repo I uploaded a model trained on tusimple lane dataset [Tusimple_Lane_Detection](http://benchmark.tusimple.ai/#/).
