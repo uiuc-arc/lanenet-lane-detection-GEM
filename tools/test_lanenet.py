@@ -19,10 +19,9 @@ import numpy as np
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 from glob import glob
-from lanenet_model import lanenet
-from lanenet_model import lanenet_postprocess
-from local_utils.config_utils import parse_config_utils
-from local_utils.log_util import init_logger
+from lanenet.lanenet_model import lanenet, lanenet_postprocess
+from lanenet import parse_config_utils
+from tools.log_util import init_logger
 
 CFG = parse_config_utils.lanenet_cfg
 LOG = init_logger.get_logger(log_file_name_prefix='lanenet_test')

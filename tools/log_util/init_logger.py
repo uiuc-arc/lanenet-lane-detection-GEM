@@ -13,7 +13,7 @@ import time
 
 import loguru
 
-from local_utils.config_utils import parse_config_utils
+from lanenet import parse_config_utils
 
 CFG = parse_config_utils.lanenet_cfg
 

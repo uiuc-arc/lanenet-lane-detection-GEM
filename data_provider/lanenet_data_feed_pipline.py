@@ -20,7 +20,7 @@ import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 import loguru
 
-from local_utils.config_utils import parse_config_utils
+from lanenet import parse_config_utils
 from data_provider import tf_io_pipline_tools
 
 CFG = parse_config_utils.lanenet_cfg

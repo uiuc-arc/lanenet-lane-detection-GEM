@@ -18,8 +18,8 @@ import argparse
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 
-from lanenet_model import lanenet
-from local_utils.config_utils import parse_config_utils
+from lanenet.lanenet_model import lanenet
+from lanenet import parse_config_utils
 
 MODEL_WEIGHTS_FILE_PATH = './test.ckpt'
 OUTPUT_PB_FILE_PATH = './lanenet.pb'

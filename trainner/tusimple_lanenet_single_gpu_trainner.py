@@ -22,7 +22,7 @@ import loguru
 import tqdm
 
 from data_provider import lanenet_data_feed_pipline
-from lanenet_model import lanenet
+from lanenet.lanenet_model import lanenet
 
 LOG = loguru.logger
 
