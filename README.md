@@ -56,8 +56,8 @@ download the model and put them in folder model/tusimple_lanenet/
 You can test a single image on the trained model as follows
 
 ```
-python tools/test_lanenet.py --weights_path /PATH/TO/YOUR/CKPT_FILE_PATH 
---image_path ./data/tusimple_test_image/0.jpg
+python3 -m tools.test_lanenet --weights_path /PATH/TO/YOUR/CKPT_FILE_PATH \
+    --image_path ./data/tusimple_test_image/0.jpg
 ```
 The results are as follows:
 
@@ -107,7 +107,7 @@ All your training image will be scaled into the same scale according to the conf
 Use the script here to generate the tensorflow records file
 
 ```
-python tools/make_tusimple_tfrecords.py 
+python3 -m tools.make_tusimple_tfrecords
 ```
 
 #### Train model
@@ -119,7 +119,7 @@ script to load your own pretrained parameters or you can implement your own base
 You may call the following script to train your own model
 
 ```
-python tools/train_lanenet_tusimple.py 
+python3 -m tools.train_lanenet_tusimple
 ```
 
 You may monitor the training process using tensorboard tools
@@ -155,7 +155,7 @@ file to your local disk. Then run the following command to generate the
 training samples and the train.txt file.
 
 ```angular2html
-python tools/generate_tusimple_dataset.py --src_dir path/to/your/unzipped/file
+python3 -m tools.generate_tusimple_dataset --src_dir path/to/your/unzipped/file
 ```
 
 The script will make the train folder and the test folder. The training 
@@ -186,7 +186,7 @@ the model on mobile device
 #### Freeze your tensorflow ckpt model weights file
 ```
 cd LANENET_PROJECT_ROOT_DIR
-python mnn_project/freeze_lanenet_model.py -w lanenet.ckpt -s lanenet.pb
+python3 -m mnn_project.freeze_lanenet_model -w lanenet.ckpt -s lanenet.pb
 ```
 
 #### Convert pb model into mnn model
