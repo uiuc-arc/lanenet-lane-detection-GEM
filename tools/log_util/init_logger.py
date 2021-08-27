@@ -13,9 +13,9 @@ import time
 
 import loguru
 
-from lanenet import parse_config_utils
+import tests.conf_tusimple
 
-CFG = parse_config_utils.lanenet_cfg
+CFG = tests.conf_tusimple.lanenet_cfg
 
 
 def get_logger(log_file_name_prefix):

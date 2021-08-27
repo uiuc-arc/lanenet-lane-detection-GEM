@@ -11,10 +11,10 @@ Train lanenet script
 from trainner import tusimple_lanenet_single_gpu_trainner as single_gpu_trainner
 from trainner import tusimple_lanenet_multi_gpu_trainner as multi_gpu_trainner
 from tools.log_util import init_logger
-from lanenet import parse_config_utils
+import tests.conf_tusimple
 
 LOG = init_logger.get_logger(log_file_name_prefix='lanenet_train')
-CFG = parse_config_utils.lanenet_cfg
+CFG = tests.conf_tusimple.lanenet_cfg
 
 
 def train_model():

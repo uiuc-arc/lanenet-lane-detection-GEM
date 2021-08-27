@@ -15,7 +15,6 @@ import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 
 from lanenet.semantic_segmentation_zoo import cnn_basenet
-from lanenet import parse_config_utils
 
 
 class VGG16FCN(cnn_basenet.CNNBaseModel):
@@ -363,14 +362,3 @@ class VGG16FCN(cnn_basenet.CNNBaseModel):
             self._vgg16_fcn_decode(name='vgg16_decode_module')
 
         return self._net_intermediate_results
-
-
-if __name__ == '__main__':
-    """
-    test code
-    """
-    test_in_tensor = tf.placeholder(dtype=tf.float32, shape=[1, 256, 512, 3], name='input')
-    model = VGG16FCN(phase='train', cfg=parse_config_utils.lanenet_cfg)
-    ret = model.build_model(test_in_tensor, name='vgg16fcn')
-    for layer_name, layer_info in ret.items():
-        print('layer name: {:s} shape: {}'.format(layer_name, layer_info['shape']))

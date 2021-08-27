@@ -220,6 +220,3 @@ class Config(dict):
             else:
                 raise TypeError('Not supported type {}'.format(type(val)))
         return json.dump(origin_dict, f_obj)
-
-
-lanenet_cfg = Config(config_path='./config/tusimple_lanenet.yaml')

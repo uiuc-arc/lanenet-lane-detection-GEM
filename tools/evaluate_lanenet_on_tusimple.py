@@ -22,10 +22,10 @@ tf.disable_v2_behavior()
 import tqdm
 
 from lanenet.lanenet_model import lanenet, lanenet_postprocess
-from lanenet import parse_config_utils
+import tests.conf_tusimple
 from tools.log_util import init_logger
 
-CFG = parse_config_utils.lanenet_cfg
+CFG = tests.conf_tusimple.lanenet_cfg
 LOG = init_logger.get_logger(log_file_name_prefix='lanenet_eval')
 
 

@@ -19,11 +19,11 @@ import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 
 from lanenet.lanenet_model import lanenet
-from lanenet import parse_config_utils
+import tests.conf_tusimple
 
 MODEL_WEIGHTS_FILE_PATH = './test.ckpt'
 OUTPUT_PB_FILE_PATH = './lanenet.pb'
-CFG = parse_config_utils.lanenet_cfg
+CFG = tests.conf_tusimple.lanenet_cfg
 
 
 def init_args():

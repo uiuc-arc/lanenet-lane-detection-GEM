@@ -22,7 +22,7 @@ import loguru
 import tqdm
 
 from data_provider import lanenet_data_feed_pipline
-from lanenet import parse_config_utils
+import tests.conf_tusimple
 from lanenet.lanenet_model import lanenet
 
 LOG = loguru.logger
@@ -552,5 +552,5 @@ if __name__ == '__main__':
     """
     test code
     """
-    worker = LaneNetTusimpleMultiTrainer(cfg=parse_config_utils.lanenet_cfg)
+    worker = LaneNetTusimpleMultiTrainer(cfg=tests.conf_tusimple.lanenet_cfg)
     print('Init complete')

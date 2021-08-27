@@ -18,9 +18,9 @@ import numpy as np
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 
-from lanenet import parse_config_utils
+import tests.conf_tusimple
 
-CFG = parse_config_utils.lanenet_cfg
+CFG = tests.conf_tusimple.lanenet_cfg
 
 RESIZE_IMAGE_HEIGHT = CFG.AUG.TRAIN_CROP_SIZE[1] + CFG.AUG.CROP_PAD_SIZE
 RESIZE_IMAGE_WIDTH = CFG.AUG.TRAIN_CROP_SIZE[0] + CFG.AUG.CROP_PAD_SIZE

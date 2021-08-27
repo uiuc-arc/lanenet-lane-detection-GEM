@@ -20,10 +20,10 @@ import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 import loguru
 
-from lanenet import parse_config_utils
+import tests.conf_tusimple
 from data_provider import tf_io_pipline_tools
 
-CFG = parse_config_utils.lanenet_cfg
+CFG = tests.conf_tusimple.lanenet_cfg
 LOG = loguru.logger
 
 

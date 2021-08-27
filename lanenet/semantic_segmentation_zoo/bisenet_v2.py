@@ -1087,15 +1087,3 @@ class BiseNetV2(cnn_basenet.CNNBaseModel):
                 'shape': instance_seg_branch_output.get_shape().as_list()
             }
         return self._net_intermediate_results
-
-
-if __name__ == '__main__':
-    """
-    test code
-    """
-    test_in_tensor = tf.placeholder(dtype=tf.float32, shape=[1, 256, 512, 3], name='input')
-    model = BiseNetV2(phase='train', cfg=parse_config_utils.lanenet_cfg)
-    ret = model.build_model(test_in_tensor, name='bisenetv2')
-    for layer_name, layer_info in ret.items():
-        print('layer name: {:s} shape: {}'.format(layer_name, layer_info['shape']))
-
