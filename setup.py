@@ -9,7 +9,7 @@ setup(
     maintainer='Chiao Hsieh',
     maintainer_email='chsieh16@illinois.edu',
     license='Apache-2.0',
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(exclude=["tests"]),
     python_requires='>=3.6',
     install_requires=[
         'numpy',
