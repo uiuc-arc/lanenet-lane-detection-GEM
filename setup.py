@@ -15,8 +15,8 @@ setup(
         'numpy',
         'opencv_contrib_python',
         'scikit_learn==0.24.1',
-        'tensorflow>=2.2',
-        'tensorflow_gpu>=2.2',
+        'tensorflow==2.10.*',
+        'tensorflow_gpu==2.10.*',
         'PyYaml',
     ],
     classifiers=[
