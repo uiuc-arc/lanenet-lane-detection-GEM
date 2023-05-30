@@ -12,6 +12,7 @@ setup(
     packages=setuptools.find_packages(exclude=["tests"]),
     python_requires='>=3.6',
     install_requires=[
+        'glog',
         'numpy',
         'opencv_contrib_python',
         'scikit_learn==0.24.1',
